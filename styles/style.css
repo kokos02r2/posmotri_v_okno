@@ -9,8 +9,8 @@ html {
 }
 
 .page {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -53,10 +53,9 @@ ol {
 .content {
   display: flex;
   align-items: flex-end;
-  max-height: 800px;
   width: 100%;
   gap: 30px;
-  padding: 133px 30px;
+  padding: 85px 30px;
 }
 
 /* Видеоконтейнер и видео */
@@ -68,6 +67,7 @@ ol {
 
 .result__video {
   object-fit: cover;
+  object-position: center;
   width: 100%;
   height: 100%;
 }
@@ -115,7 +115,7 @@ ol {
 /* Текстовое поле */
 .search-form__textfield {
   width: 225px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255);
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
@@ -157,7 +157,7 @@ ol {
   border: 1px solid #fff;
 }
 
-input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: "";
   position: absolute;
   margin: 1px;
@@ -168,7 +168,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 
 /* Кнопки */
 .button {
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   background-color: transparent;
   color: #fff;
   font-family: inherit;
@@ -202,7 +202,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 /* Заголовок */
 .title {
   text-transform: uppercase;
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-size: 75px;
   font-weight: 700;
   line-height: 70.5px;
@@ -217,7 +217,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
   display: flex;
   flex-direction: column;
   align-self: start;
-  gap: 22px;
+  gap: 18px;
   width: 100%;
 }
 
@@ -226,20 +226,28 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 14px;
   width: 100%;
   overflow-y: auto;
-  scrollbar-width: none;
   max-height: 298px;
   padding: 2px;
 }
 
+/* Стилизация скроллбара */
 .content__list::-webkit-scrollbar {
-  display: none;
+  width: 8px;
+}
+
+.content__list::-webkit-scrollbar-thumb {
+  background-color: #545050;
+  border-radius: 4px;
+}
+
+.content__list::-webkit-scrollbar-track {
+  background-color: #1b1919;
 }
 
 .content__list-item:not(:last-child) {
-  padding-bottom: 20px;
+  padding-bottom: 32px;
 }
 
 /* Карточка-ссылка */
@@ -273,17 +281,23 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 .content__video-card-thumbnail {
   height: 103px;
   width: 194px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .content__video-card-description-container {
+  width: 200px;
   padding-left: 3px;
 }
 
 .content__video-card-title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   font-size: 30px;
   font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .content__video-card-description {
