@@ -115,7 +115,7 @@ ol {
 /* Текстовое поле */
 .search-form__textfield {
   width: 225px;
-  color: rgba(255, 255, 255);
+  color: rgb(255, 255, 255);
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
@@ -130,7 +130,7 @@ ol {
 }
 
 .search-form__textfield::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgb(255, 255, 255, 0.7);
 }
 
 .search-form__textfield:focus {
@@ -228,7 +228,7 @@ ol {
   flex-direction: column;
   width: 100%;
   overflow-y: auto;
-  max-height: 298px;
+  height: 298px;
   padding: 2px;
 }
 
